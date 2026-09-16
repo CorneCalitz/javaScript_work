@@ -1,0 +1,40 @@
+<!DOCTYPE html> 
+<html> 
+  <head> 
+    <title>Hello, JavaScript!</title> 
+        <script src="script.js"></script> 
+        <link href="style.css" rel="stylesheet">
+  </head> 
+  <body> 
+    <h1 id="main-heading">Hello, <strong>JavaScript</strong>
+!</h1> 
+    <p class="highlight">This is my first <strong>paragraph
+</strong>.</p> 
+    <p>This is my second <strong>paragraph</strong>.</p> 
+    <h1>Here's another heading.</h1> 
+    <p class="highlight">This is my third <strong>paragraph
+</strong>.</p> 
+
+
+<!--
+
+You can return an array-like object containing all the elements that the type of selector.
+You can use this selection method to alter the elements selected using javascript.
+------------------CONSOLE CODE------------------
+document.querySelectorAll(".highlight"); 
+NodeList(2) [p.highlight, p.highlight] 
+
+let strong = document.querySelectorAll("#main-heading stron
+g"); 
+strong;
+NodeList [strong]
+
+strong[0].textContent; 
+'JavaScript' 
+
+strong[0].textContent = 'World';
+------------------CONSOLE CODE------------------
+
+
+-->
+</html> 

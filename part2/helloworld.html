@@ -1,0 +1,43 @@
+<!DOCTYPe html>
+
+<!-- Web pages are documents that link to each other, 
+ and the annotations are instructions that tell a web browser how to display the web pages.
+ HTML annotation take the form of tags.
+ An HTML tag is a name enclosed in angle brackets.
+ Every pair of tags defines an element.
+ HTML documents ussually contain a set of nested elements each displaying their own set of content.
+-->
+
+<html>
+    <head>
+        <title>Hello, world!</title>
+    </head>
+    <body>
+        <h1 id="main-heading"> Hello ! </h1>
+        <p> Welcome to my document</p>
+    </body>
+
+<!-- When your web browser loads an HTML file, it creates an internal model of the elements known as the Document Object model (DOM).
+ Unlike html (static text file), the DOM is a dynamic model of the page meaning you can modify it using javascript.
+ To view the DOM of your web page just view the elements tabs under the dev tools in your browser. 
+
+ We can use the DOM api to modify any element in our page, and even add new elements. 
+ The simplest method is to refer to am element's id attribute. 
+
+ ---------- console code --------------
+let heading = document.getElementById("main-heading");
+undefined
+heading
+<h1 id=​"main-heading">​hi there...​</h1>​
+console.log(heading);
+VM1165:1 <h1 id=​"main-heading">​hi there...​</h1>​
+undefined
+heading.innerText;
+'Hello !'
+heading.innerText = 'hi there...';
+'hi there...'
+---------- console code --------------
+
+
+-->
+</html>

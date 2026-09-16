@@ -1,0 +1,85 @@
+<html><body><script>
+
+
+// Parameters are generic names for a function's inputs
+// Arguments are the actual input values passed to the function when you call it.
+
+function sayHello(name) {
+    console.log(`Hello, ${name}!`);
+}
+
+sayHello('Charles')
+
+let addCalls = 0;
+
+function add(x, y) {
+    addCalls ++;
+    console.log(`x was ${x} and y was ${y}.`);
+    return x + y;
+}
+
+console.log(add(1, 2));
+
+// Javascript is a dynamically typed language, 
+// variable types and parameters can change while the program is running,
+// as opposed to a statically typed language.
+
+console.log(add('Bob\'s ', 'Burgers'));
+console.log(add('1', 1));
+console.log(add(true, true));
+
+console.log(`Add function was used ${addCalls} times`);
+
+// When  a function is passed as an argument it is referred to as a callback.
+
+function sayHi() {
+    console.log('Hi!');
+}
+
+
+// Notice we pass the function as an argument and we write its name without parentheses
+// A function without parentheses simply refers to the, while a function name with parentheses
+// calls the function.
+setTimeout(sayHi, 2000);
+
+// There exists other ways of declaring functions
+// Function expression (function literal) is a code literal whose value is a function.
+// Whereas a function declaration creates a function and binds it to a name,
+// a function expression is an expresssion that evaluates to (returns) a function.
+// 1st. Function expression without names are also called anonymous functions.
+// 2nd. Function expressions can't be written at the start of a line of code.
+
+let addExpression = function(x, y) {
+    return x + y;
+};
+
+console.log(addExpression(2, 3));
+
+// You can use declarations and expressions interchangeably however the advantage
+// of using an expression is that you can pass it as an argument and write the function
+// without declaring or passing it to a variable first. example ->
+
+setTimeout(function() {
+    console.log('Hello expression!'); 
+}, 3000);
+
+// Arrow function expressions is a more compact version of function expressions
+
+let addArrow = (x, y) => {
+    return x + y;
+};
+
+console.log(addArrow(10, 2)); 
+
+// If the function consists of one line you can also write it as follow
+let addArrowConsice = (x, y) => x + y;
+
+// If the function has one parameter you can further simplify it as follow
+let squared = x => x * x;
+
+setInterval(() => {
+    console.log('Beep');
+}, 4000);
+
+
+</script></body></html>

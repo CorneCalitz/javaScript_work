@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+
+
+<!--
+
+It builds the DOM incrementally by
+reading through the HTML file from top to bottom. Anytime
+the browser reaches a script element, it executes the whole
+script before continuing. That means that if we had our
+script element in the head, and we looked up the h1 element
+in that script, the h1 element wouldn’t be in the DOM yet!
+By placing the script element at the end of the body, we
+can be sure that all the page content has been loaded into
+the DOM before we run our JavaScript.
+
+-->
+<html> 
+  <head> 
+    <title>Event Handlers</title> 
+     <link rel="stylesheet" href="style.css">
+  </head> 
+  <body id="main-body"> 
+    <h1 id="main-heading">Hello, <em>World!</em></h1> 
+
+    <ul id="word-list">
+        <li>The</li> 
+      <li>Dog</li> 
+      <li>Cat</li> 
+      <li>Is</li> 
+      <li>Was</li> 
+      <li>And</li> 
+      <li>Hungry</li> 
+      <li>Green</li> 
+    </ul>
+
+    <p id="sentence"></p>
+
+    <div id="box"></div>
+    <script src="script.js"></script>
+  </body>
+</html> 

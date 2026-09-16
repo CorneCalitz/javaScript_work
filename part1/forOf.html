@@ -1,0 +1,30 @@
+<html><body><script>
+
+// for..of loop cycles through the items in an array.
+// While loops and for loops repeat as long as a condition is true.
+
+let colors = ["Red", "Green", "Blue"]; 
+
+for (let color of colors) {
+    console.log(`Index of ${color} is ${colors.indexOf(color)}`);
+
+}
+
+// Calling Object.entries on an array gives you the index and the item in an array.
+// This called a destructuring assignment.
+
+for (let [index, item] of colors.entries()) {
+    console.log(`${index}: ${item} is a colour.`)
+}
+
+// Can also use destructuring assignment with regular variables
+let rgbColour = [124, 100, 0];
+let [r, g, b] = rgbColour
+console.log(r);
+
+let name = 'john smith'
+for (let [index, letter] of name.split('').entries()) {
+    console.log(`${letter} : ${index}`)
+}
+
+</script></body></html>

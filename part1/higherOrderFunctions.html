@@ -1,0 +1,67 @@
+<html><body><script>
+
+//A higher order function is a function that takes another function as an argument,
+// or that outputs another function as an argument.
+
+//A method is a type of function that operates on an object, such as an
+// array. In most cases, the callback passed to these higher
+// order array methods is called once for each item in the array.
+
+let shoppingList = ["Milk", "Sugar", "Bananas", "Ice Cream"]; 
+
+// find method runs a callback for each element in the array in turn
+console.log(shoppingList.find(item => item.length > 6));
+console.log(shoppingList.find(item => item[0] === "A"));
+
+// filter method returns a new array 
+console.log(shoppingList.filter(item => item.length > 6));
+
+// Rely on the map method to store transformed variables.
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; 
+
+let cubes = numbers.map(x => x * x * x);
+console.log(cubes)
+
+let stockList = [ 
+  {name: "Cheese", price: 3}, 
+  {name: "Bread", price: 1}, 
+  {name: "Butter", price: 2} 
+]; 
+
+let prices = stockList.map(item => item.price);
+console.log(prices);
+
+// To create your own higher-order function that takes a callback as an argument
+// ,simply include a name for the callback in the function's list of parameters.
+
+function doubler(callback) {
+    callback();
+    callback();
+}
+
+doubler(() => console.log('Hello there!'));
+
+function callMultipleTimes(times, callback) {
+    for (let i = 0; i < times; i++) {
+        callback(i);
+    }
+}
+
+callMultipleTimes(3, x => console.log(`This was time: ${x}`));
+
+
+// Higher-order function can also return Functions
+function makeAppender (suffix) {
+    return function (text) {
+        return text + suffix;
+    };
+}
+
+let exciting = makeAppender('!!!');
+let puzzling = makeAppender("???")
+console.log(exciting('Hello'));
+console.log(puzzling('Hello'));
+
+
+
+</script></body></html>

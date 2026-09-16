@@ -1,0 +1,25 @@
+<html><body><script>
+
+// Sometimes you want a function to accept mulitple parameters.
+// You can do this using rest parameters
+// Rest parameters bundle parameters into an array
+
+let myColors = (name, ...favoriteColors) => {
+    let colorString = favoriteColors.join(", ");
+    console.log(`My name is ${name} and my colors are: ${colorString}.`);
+};
+
+myColors('Nick', 'green', 'blue', 'grey');
+myColors("Indecisive", "red", "orange", "yellow", "green","blue", "indigo", "violet");
+
+function sum(...numbers) {
+    let total = 0;
+    for (let number of numbers) {
+        total += number;
+    }
+    return total;
+}
+
+console.log(sum(1,1,1,1,2,3));
+
+</script></body></html>

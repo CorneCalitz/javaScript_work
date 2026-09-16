@@ -1,0 +1,51 @@
+<html><body><script>
+// No classes existed in early JavaScript
+// It was only possible to share behaviours between objects using prototype-based inheritance.
+// This older system relies on two mechanisms:
+// - A constructor function that creates and returns new objects.
+// - A prototype, an example object that the constructor uses as a model for the objects it creates.
+
+function Cat(name) {
+    this.name = name;
+}
+
+Cat.prototype.sayHello = function () {
+    console.log(`Miaow! My name is ${this.name}.`); 
+}
+
+let kiki = new Cat('Kiki');
+kiki.sayHello();
+console.log(kiki);
+
+class Dog { 
+  constructor(name) { 
+    this.name = name; 
+  }
+
+  sayHello() { 
+    console.log(`Woof! My name is ${this.name}.`); 
+  }
+} 
+
+let felix = new Dog("Felix"); 
+felix.sayHello();
+console.log(felix);
+
+console.log(kiki.__proto__);
+
+let moona = new Cat('Moona');
+moona.sayHello = function() {
+    console.log(`HELLO!!! I AM ${this.name.toUpperCase()}!`);
+};
+
+moona.sayHello();
+kiki.sayHello()
+
+let yappy = new Dog('Yappy')
+yappy.sayHello = function() {
+    console.log(`Woof! My name is ${this.name}. I love barking a lot.`); 
+};
+
+yappy.sayHello();
+
+</script></body></html>
