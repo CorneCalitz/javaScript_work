@@ -33,6 +33,8 @@ let rigthtScore = 0;
 
 let gameOver = false;
 
+let ball_color = "white"
+
 document.addEventListener("mousemove", e => {
     rightPaddleTop = e.y - canvas.offsetTop;
 });
@@ -43,19 +45,22 @@ function draw() {
     ctx.fillStyle = 'black';
     ctx.fillRect(0, 0, width, height);
 
-    //Everything else will be white
-    ctx.fillStyle = 'white';
 
     // Draw ball
+    ctx.fillStyle = ball_color;
     ctx.fillRect(ballPosition.x, ballPosition.y, BALL_SIZE, BALL_SIZE);
+    
 
     // Draw paddles
     //Left
+    ctx.fillStyle = "red";
     ctx.fillRect(PADDLE_OFFSET, leftPaddleTop, PADDLE_WIDTH, PADDLE_HEIGHT)
     //Right
+    ctx.fillStyle = "green";
     ctx.fillRect(width - PADDLE_WIDTH - PADDLE_OFFSET, rightPaddleTop, PADDLE_WIDTH, PADDLE_HEIGHT)
 
     //Draw scores
+    ctx.fillStyle = "white";
     ctx.font = "30px monospace";
     ctx.textAlign = "left";
     ctx.fillText(leftScore.toString(), 50, 50);
@@ -65,6 +70,7 @@ function draw() {
 
 function initBall(xDirection, yDirection) {
 
+    ball_color = 'white'
     ballPosition = {x: width/2, y: height/2};
     xSpeed = xDirection*8;
     ySpeed = yDirection*4;
@@ -148,6 +154,10 @@ function checkCollision() {
         let distanceFromBottom = leftPaddle.bottom - ball.bottom;
         adjustAngle(distanceFromTop, distanceFromBottom);
         xSpeed = Math.abs(xSpeed);
+        ball_color = 'red';
+        //Insert sound byte here
+
+        
     }
 
     if (checkPaddleCollision(ball, rightPaddle)) {
@@ -156,6 +166,8 @@ function checkCollision() {
         let distanceFromBottom = rightPaddle.bottom - ball.bottom;
         adjustAngle(distanceFromTop, distanceFromBottom);
         xSpeed = -Math.abs(xSpeed);
+        ball_color = 'green';
+        //Insert sound byte here
     }
 
     // xDirection of the ball is determined by who won.
