@@ -3,6 +3,7 @@
  * - made using html and javaScript
  * 
 */
+import {greenPaddleHit, redPaddleHit, gameTune} from "./sound.js"
 
 // Initialize canvas area
 let canvas = document.querySelector('#canvas');
@@ -17,6 +18,7 @@ const BALL_SIZE = 10;
 let ballPosition;
 let xSpeed;
 let ySpeed;
+let ball_color = "white"
 
 //Instantiates paddles
 const PADDLE_WIDTH = 10;
@@ -33,7 +35,7 @@ let rigthtScore = 0;
 
 let gameOver = false;
 
-let ball_color = "white"
+
 
 document.addEventListener("mousemove", e => {
     rightPaddleTop = e.y - canvas.offsetTop;
@@ -156,6 +158,7 @@ function checkCollision() {
         xSpeed = Math.abs(xSpeed);
         ball_color = 'red';
         //Insert sound byte here
+        greenPaddleHit();
 
         
     }
@@ -168,6 +171,7 @@ function checkCollision() {
         xSpeed = -Math.abs(xSpeed);
         ball_color = 'green';
         //Insert sound byte here
+        redPaddleHit();
     }
 
     // xDirection of the ball is determined by who won.
@@ -214,6 +218,7 @@ function gameLoop() {
 
     if (gameOver) {
         draw();
+        gameTune(true);
         drawGameOver();
     } else {
         // Call this function again after a timeout
@@ -223,6 +228,7 @@ function gameLoop() {
 }
 
 initBall(1, 0);
+gameTune(false);
 gameLoop();
 
 
