@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SVG</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <svg width="1000" height="900">
+
+            <rect width="95" height="20" x="400" y="5" stroke="red" fill="none"></rect> 
+            <text x="405" y="20" font-family="sans-serif">Hello, SVG!</text> 
+
+            <g transform="translate(200, 50) scale(3, 3) skewX(40) skewY(20) rotate(-20, 1, 1)" font-family="sans-serif" fill="blue"> 
+                <text x="0" y="20">Always</text> 
+                <text x="0" y="40">Be</text> 
+                <text x="0" y="60">Coding</text> 
+            </g> 
+
+            <circle fill="#faa0a0" r="100" cx="124" cy="430"></circle>
+            <g stroke="#944e30" stroke-width="3">
+                <rect width="8" height="100" x="120" y="390" fill="#e1704d"></rect> 
+                <circle fill="#acd270" r="18" cx="124" cy="450"></circle> 
+                <circle fill="#fdfce2" r="18" cx="124" cy="420"></circle>
+                <circle fill="#f8c9dc" r="18" cx="124" cy="390"></circle> 
+            </g>
+
+            <path fill="#e44d26" d="M 0 0 H 182 L 165 185 L 90 206 L 17 185 Z"/> 
+            <path fill="#f16529" d="M 91 15 H 165 L 151 173 L 91 190Z"/>
+            <path fill="#ebebeb" d="m 34 38 h 57 v 23 h -32 l 2 24 h 30 v 23 h -51 z"/> 
+            <path fill="#ebebeb" d="m 41 118 h 23 l 2 18 l 25 7 v 24 l -47 -13 z"/> 
+            <path fill="#fff" d="m 148 38 h -57 v 23 h 55 z"/> 
+            <path fill="#fff" d="m 143 85 h -52 v 23 h 28 l -3 30 l -25 5 v 24 l 47 -13 z"/>
+
+            <circle class="boring" r="40" cx="650" cy="50"></circle>
+            <rect class="boring" x="720" y="10" width="80" height="80"></rect>
+            <path class="boring"  d="M 830 90 l 40 -80 l 40 80 z"></path>
+
+            <circle class="fun" r="40" cx="650" cy="150"></circle>
+            <rect class="fun" x="720" y="110" width="80" height="80"></rect>
+            <path class="fun"  d="M 830 190 l 40 -80 l 40 80 z"></path>
+
+
+        </svg> 
+        <script src="script.js"></script>
+    </body>
+</html>
